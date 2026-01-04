@@ -20,6 +20,31 @@ export default function SoftwareSection({ isDark }) {
 
   const projects = [
     {
+      title: "LoadMitrra",
+      subtitle: "Full-Stack Truck & Load Management Platform",
+      description:
+        "A MERN-based logistics platform that connects suppliers and truck drivers, enabling location-based load discovery, bidding, real-time chat, and shipment tracking through role-based dashboards.",
+      tech: [
+        "MongoDB",
+        "Express",
+        "React",
+        "Node.js",
+        "JWT",
+        "Bootstrap",
+        "Vercel",
+        "Render",
+      ],
+      highlights: [
+        "Role-based authentication for drivers and suppliers using JWT",
+        "Location-based nearby load discovery using browser geolocation",
+        "Driver and supplier dashboards with earnings, history, and chat",
+        "Real-time chat system with polling-based updates",
+        "RESTful APIs for load creation, bidding, and shipment tracking",
+        "Responsive UI built with React Hooks and reusable components",
+      ],
+      github: "https://github.com/asoleshubham0125/LoadMitrraApp",
+    },
+    {
       title: "StatzHub",
       subtitle: "Full-Stack Trading Platform",
       description:
@@ -53,32 +78,6 @@ export default function SoftwareSection({ isDark }) {
         "MVC architecture with EJS templates",
       ],
       github: "https://github.com/asoleshubham0125/GoBnB",
-    },
-    {
-      title: "LoadMitrra",
-      subtitle: "Full-Stack Truck & Load Management Platform",
-      description:
-        "A MERN-based logistics platform that connects suppliers and truck drivers, enabling location-based load discovery, bidding, real-time chat, and shipment tracking through role-based dashboards.",
-      tech: [
-        "MongoDB",
-        "Express",
-        "React",
-        "Node.js",
-        "JWT",
-        "Bootstrap",
-        "Vercel",
-        "Render",
-      ],
-      highlights: [
-        "Role-based authentication for drivers and suppliers using JWT",
-        "Location-based nearby load discovery using browser geolocation",
-        "Driver and supplier dashboards with earnings, history, and chat",
-        "Real-time chat system with polling-based updates",
-        "RESTful APIs for load creation, bidding, and shipment tracking",
-        "Responsive UI built with React Hooks and reusable components",
-      ],
-      github: "https://github.com/asoleshubham0125/LoadMitrraApp",
-      live: "https://loadmitrra.vercel.app/",
     },
 
     {
