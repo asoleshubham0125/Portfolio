@@ -55,6 +55,33 @@ export default function SoftwareSection({ isDark }) {
       github: "https://github.com/asoleshubham0125/GoBnB",
     },
     {
+      title: "LoadMitrra",
+      subtitle: "Full-Stack Truck & Load Management Platform",
+      description:
+        "A MERN-based logistics platform that connects suppliers and truck drivers, enabling location-based load discovery, bidding, real-time chat, and shipment tracking through role-based dashboards.",
+      tech: [
+        "MongoDB",
+        "Express",
+        "React",
+        "Node.js",
+        "JWT",
+        "Bootstrap",
+        "Vercel",
+        "Render",
+      ],
+      highlights: [
+        "Role-based authentication for drivers and suppliers using JWT",
+        "Location-based nearby load discovery using browser geolocation",
+        "Driver and supplier dashboards with earnings, history, and chat",
+        "Real-time chat system with polling-based updates",
+        "RESTful APIs for load creation, bidding, and shipment tracking",
+        "Responsive UI built with React Hooks and reusable components",
+      ],
+      github: "https://github.com/asoleshubham0125/LoadMitrraApp",
+      live: "https://loadmitrra.vercel.app/",
+    },
+
+    {
       title: "Weather Widgets",
       subtitle: "React Weather Dashboard",
       description:
@@ -82,6 +109,23 @@ export default function SoftwareSection({ isDark }) {
         "Includes sound effects and clean UI",
       ],
       github: "https://github.com/asoleshubham0125/SnakeGame",
+    },
+    {
+      title: "Simon Says Game",
+      subtitle: "Interactive Memory Challenge",
+      description:
+        "A colorful browser-based memory game built with HTML, CSS, and JavaScript where players repeat an increasingly complex sequence of flashing buttons to advance levels.",
+      tech: ["HTML5", "CSS3", "JavaScript"],
+      highlights: [
+        "Progressive difficulty as the sequence grows each level",
+        "Keyboard-based game start trigger",
+        "Visual button-flash feedback with smooth animations",
+        "Score display on game over",
+        "Optional Hint feature to replay the sequence",
+        "High-score / best-score tracking",
+        "Beginner-friendly and fully responsive UI",
+      ],
+      github: "https://github.com/asoleshubham0125/Simon-says-game",
     },
   ];
 
