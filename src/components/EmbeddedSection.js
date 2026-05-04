@@ -1,6 +1,9 @@
 import { Cpu } from "lucide-react";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function EmbeddedSection({ isDark }) {
+  const sectionRef = useScrollReveal();
+
   const skills = {
     languages: ["Embedded C", "Python", "ARM Assembly", "Java"],
     hardware: ["ESP32", "ARM MCUs", "UART", "I2C", "SPI"],
@@ -35,10 +38,9 @@ export default function EmbeddedSection({ isDark }) {
         "Automated quality control system for railway infrastructure using ESP32 and computer vision.",
       tech: ["ESP32", "IR Sensors", "Camera Module", "Computer Vision", "IoT"],
       highlights: [
-        "Dimensional validation within ±10mm tolerance",
-        "Real-time defect detection",
-        "Automated inspection workflow",
-        "Industrial automation integration",
+        "Built an automated inspection system using ESP32, IR sensors, and camera modules to validate railway sleeper block dimensions",
+        "Implemented image capture from top and side views with dimensional tolerance within ±10 mm",
+        "Improved inspection efficiency by automating the validation workflow, reducing manual labor",
       ],
     },
     {
@@ -64,19 +66,18 @@ export default function EmbeddedSection({ isDark }) {
       title: "Satellite Data Prediction",
       subtitle: "ML-based Trajectory Analysis",
       description:
-        "Advanced machine learning system for satellite trajectory prediction with comprehensive data visualization.",
+        "Machine learning models for satellite position and velocity trend prediction from time-series tracking data.",
       tech: [
         "Python",
+        "Pandas",
+        "Seaborn",
+        "Matplotlib",
         "Machine Learning",
-        "Time-series",
-        "3D Visualization",
-        "Data Science",
       ],
       highlights: [
-        "3D trajectory plotting and analysis",
-        "Time-series forecasting models",
-        "Predictive analytics dashboard",
-        "Real-time data processing",
+        "Built ML-based models using Python and statistical techniques to predict satellite position and velocity trends",
+        "Developed interactive visual dashboards using heatmaps, 3D trajectory plots, and time-series graphs",
+        "Optimized data preprocessing and feature handling for scalable processing of large datasets",
       ],
     },
   ];
@@ -84,18 +85,18 @@ export default function EmbeddedSection({ isDark }) {
   const internship = {
     title: "Embedded Systems Intern",
     company: "Startrit Infratech Pvt Ltd",
-    period: "May 2025 – Aug 2025",
+    period: "May 2025 – July 2025",
     responsibilities: [
-      "Developed robotics and automation modules using Raspberry Pi",
-      "Implemented UART-based communication protocols",
-      "Built sensor-based inspection systems for industrial applications",
-      "Real-time control system development and MATLAB analysis",
+      "Improved automation system reliability by developing and integrating sensor-based control modules using Embedded C and Python to support stable real-time operations.",
+      "Validated hardware–software communication by building and testing a Raspberry Pi robotic prototype using UART to ensure accurate data transmission and device control.",
+      "Supported faster inspection and analysis workflows by running MATLAB-based simulations and performing structured data analysis to assist engineering decisions.",
     ],
   };
 
   return (
     <section
       id="embedded"
+      ref={sectionRef}
       className={`py-20 ${
         isDark ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       }`}
@@ -103,15 +104,17 @@ export default function EmbeddedSection({ isDark }) {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* TITLE */}
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 fade-in-up">
             Embedded{" "}
             <span className="bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
               Systems
             </span>
           </h2>
 
+          <div className="section-divider mb-4 fade-in-up"></div>
+
           <p
-            className={`text-center text-lg mb-16 ${
+            className={`text-center text-lg mb-16 fade-in-up ${
               isDark ? "text-gray-400" : "text-gray-600"
             }`}
           >
@@ -119,15 +122,15 @@ export default function EmbeddedSection({ isDark }) {
           </p>
 
           {/* SKILLS SECTION */}
-          <div className="mb-16">
+          <div className="mb-16 fade-in-up">
             <h3 className="text-2xl font-bold mb-8 text-center">
               Technical Expertise
             </h3>
 
-            <div className="grid md:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-4 gap-6 stagger-children">
               {/* Languages */}
               <div
-                className={`p-6 rounded-xl shadow-lg ${
+                className={`fade-in-up p-6 rounded-xl shadow-lg card-shine ${
                   isDark ? "bg-gray-800" : "bg-gray-50"
                 }`}
               >
@@ -136,7 +139,7 @@ export default function EmbeddedSection({ isDark }) {
                   {skills.languages.map((skill, i) => (
                     <span
                       key={i}
-                      className={`px-3 py-1 rounded-full text-sm ${
+                      className={`skill-tag px-3 py-1 rounded-full text-sm ${
                         isDark
                           ? "bg-gray-900 text-gray-300"
                           : "bg-white text-gray-700"
@@ -150,7 +153,7 @@ export default function EmbeddedSection({ isDark }) {
 
               {/* Hardware */}
               <div
-                className={`p-6 rounded-xl shadow-lg ${
+                className={`fade-in-up p-6 rounded-xl shadow-lg card-shine ${
                   isDark ? "bg-gray-800" : "bg-gray-50"
                 }`}
               >
@@ -159,7 +162,7 @@ export default function EmbeddedSection({ isDark }) {
                   {skills.hardware.map((skill, i) => (
                     <span
                       key={i}
-                      className={`px-3 py-1 rounded-full text-sm ${
+                      className={`skill-tag px-3 py-1 rounded-full text-sm ${
                         isDark
                           ? "bg-gray-900 text-gray-300"
                           : "bg-white text-gray-700"
@@ -173,7 +176,7 @@ export default function EmbeddedSection({ isDark }) {
 
               {/* Software */}
               <div
-                className={`p-6 rounded-xl shadow-lg ${
+                className={`fade-in-up p-6 rounded-xl shadow-lg card-shine ${
                   isDark ? "bg-gray-800" : "bg-gray-50"
                 }`}
               >
@@ -182,7 +185,7 @@ export default function EmbeddedSection({ isDark }) {
                   {skills.software.map((skill, i) => (
                     <span
                       key={i}
-                      className={`px-3 py-1 rounded-full text-sm ${
+                      className={`skill-tag px-3 py-1 rounded-full text-sm ${
                         isDark
                           ? "bg-gray-900 text-gray-300"
                           : "bg-white text-gray-700"
@@ -196,7 +199,7 @@ export default function EmbeddedSection({ isDark }) {
 
               {/* Domains */}
               <div
-                className={`p-6 rounded-xl shadow-lg ${
+                className={`fade-in-up p-6 rounded-xl shadow-lg card-shine ${
                   isDark ? "bg-gray-800" : "bg-gray-50"
                 }`}
               >
@@ -205,7 +208,7 @@ export default function EmbeddedSection({ isDark }) {
                   {skills.domains.map((skill, i) => (
                     <span
                       key={i}
-                      className={`px-3 py-1 rounded-full text-sm ${
+                      className={`skill-tag px-3 py-1 rounded-full text-sm ${
                         isDark
                           ? "bg-gray-900 text-gray-300"
                           : "bg-white text-gray-700"
@@ -220,11 +223,11 @@ export default function EmbeddedSection({ isDark }) {
           </div>
 
           {/* EXPERIENCE */}
-          <div className="mb-16">
+          <div className="mb-16 fade-in-up">
             <h3 className="text-2xl font-bold mb-8 text-center">Experience</h3>
 
             <div
-              className={`p-8 rounded-2xl border ${
+              className={`p-8 rounded-2xl border gradient-border card-shine ${
                 isDark
                   ? "bg-gradient-to-br from-cyan-900/30 to-teal-900/30 border-cyan-800/50"
                   : "bg-gradient-to-br from-cyan-50 to-teal-50 border-cyan-200"
@@ -262,8 +265,8 @@ export default function EmbeddedSection({ isDark }) {
                       isDark ? "text-gray-300" : "text-gray-700"
                     }`}
                   >
-                    <span className="text-cyan-500 mt-1">▹</span>
-                    <span>{resp}</span>
+                    <span className="text-cyan-500 mt-1 flex-shrink-0">▹</span>
+                    <span className="text-sm leading-relaxed">{resp}</span>
                   </li>
                 ))}
               </ul>
@@ -272,15 +275,15 @@ export default function EmbeddedSection({ isDark }) {
 
           {/* PROJECTS */}
           <div>
-            <h3 className="text-2xl font-bold mb-8 text-center">
+            <h3 className="text-2xl font-bold mb-8 text-center fade-in-up">
               Featured Projects
             </h3>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 stagger-children">
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className={`p-8 rounded-2xl transition-all duration-300 hover:scale-105 border ${
+                  className={`fade-in-up p-8 rounded-2xl transition-all duration-300 hover:scale-[1.02] border card-shine gradient-border ${
                     isDark
                       ? "bg-gray-800 border-gray-700 hover:bg-gray-750"
                       : "bg-gray-50 border-gray-200 hover:shadow-2xl"
@@ -292,7 +295,7 @@ export default function EmbeddedSection({ isDark }) {
                   </p>
 
                   <p
-                    className={`mb-6 ${
+                    className={`mb-6 text-sm leading-relaxed ${
                       isDark ? "text-gray-400" : "text-gray-600"
                     }`}
                   >
@@ -304,7 +307,7 @@ export default function EmbeddedSection({ isDark }) {
                       {project.tech.map((tech, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-full text-sm font-semibold"
+                          className="px-3 py-1 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-full text-xs font-semibold"
                         >
                           {tech}
                         </span>
@@ -319,7 +322,9 @@ export default function EmbeddedSection({ isDark }) {
                             isDark ? "text-gray-400" : "text-gray-600"
                           }`}
                         >
-                          <span className="text-cyan-500 mt-1">▹</span>
+                          <span className="text-cyan-500 mt-1 flex-shrink-0">
+                            ▹
+                          </span>
                           {highlight}
                         </li>
                       ))}

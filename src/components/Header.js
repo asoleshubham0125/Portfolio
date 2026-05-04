@@ -31,8 +31,13 @@ export default function Header({ isDark, toggleTheme }) {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-            Shubham Asole
+          <div className="flex items-center gap-2">
+            <span className="w-9 h-9 flex items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 text-white font-extrabold text-sm tracking-tight select-none">
+              SA
+            </span>
+            <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              Shubham Asole
+            </span>
           </div>
 
           <div className="hidden md:flex items-center gap-6">

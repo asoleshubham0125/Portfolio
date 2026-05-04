@@ -20,7 +20,7 @@ export default function Footer({ isDark }) {
           <div className="text-sm text-center md:text-left">
             <span>IIITDM Kancheepuram</span>
             <span className="mx-2">•</span>
-            <span>Aspiring SDE & Embedded Engineer</span>
+            <span>Aspiring Software Engineer</span>
           </div>
 
           <div className="text-sm">

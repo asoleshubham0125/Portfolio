@@ -16,11 +16,11 @@ function App() {
   const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    document.title = "Shubham Asole - Software & Embedded Systems Engineer";
+    document.title = "Shubham Asole - Software & Embedded Systems Engineer | Full-Stack Developer";
 
     const metaDescription = document.querySelector('meta[name="description"]');
     const descriptionText =
-      "Full-Stack Developer & Embedded Systems Engineer specializing in MERN stack, IoT, and real-time control systems. Building scalable solutions.";
+      "Aspiring Software Engineer skilled in Java and JavaScript, developing scalable backend services and responsive web applications. Full-Stack Developer & Embedded Systems Engineer.";
 
     if (metaDescription) {
       metaDescription.setAttribute("content", descriptionText);
@@ -43,7 +43,7 @@ function App() {
           <Route
             path="/"
             element={
-              <main className="bg-white dark:bg-gray-900 transition-all duration-500">
+              <main className="transition-colors duration-300">
                 <Hero isDark={isDark} />
                 <About isDark={isDark} />
                 <SoftwareSection isDark={isDark} />

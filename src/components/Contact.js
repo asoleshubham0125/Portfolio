@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Mail, Phone, Linkedin, Github, Send } from "lucide-react";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function Contact({ isDark }) {
+  const sectionRef = useScrollReveal();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -76,21 +79,24 @@ export default function Contact({ isDark }) {
   return (
     <section
       id="contact"
+      ref={sectionRef}
       className={`py-20 ${
         isDark ? "bg-gray-800 text-white" : "bg-gray-50 text-gray-900"
       }`}
     >
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 fade-in-up">
             Get In{" "}
             <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
               Touch
             </span>
           </h2>
 
+          <div className="section-divider mb-4 fade-in-up"></div>
+
           <p
-            className={`text-center text-lg mb-16 ${
+            className={`text-center text-lg mb-16 fade-in-up ${
               isDark ? "text-gray-400" : "text-gray-600"
             }`}
           >
@@ -98,10 +104,10 @@ export default function Contact({ isDark }) {
           </p>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
+            <div className="fade-in-left">
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
 
-              <div className="space-y-6 mb-8">
+              <div className="space-y-4 mb-8">
                 {contactInfo.map((item, index) => (
                   <a
                     key={index}
@@ -116,7 +122,7 @@ export default function Contact({ isDark }) {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className={`flex items-center gap-4 p-4 rounded-xl ${
+                    className={`flex items-center gap-4 p-4 rounded-xl card-shine ${
                       isDark
                         ? "bg-gray-900 hover:bg-gray-850"
                         : "bg-white hover:shadow-lg"
@@ -145,7 +151,7 @@ export default function Contact({ isDark }) {
               </div>
 
               <div
-                className={`p-6 rounded-xl border ${
+                className={`p-6 rounded-xl border gradient-border ${
                   isDark
                     ? "bg-gradient-to-br from-blue-900/30 to-cyan-900/30 border-blue-800/50"
                     : "bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-200"
@@ -157,9 +163,10 @@ export default function Contact({ isDark }) {
                   {[
                     "Dual expertise in Software & Embedded Systems",
                     "Strong foundation in DSA, OOP, and System Design",
-                    "Production-ready MERN stack projects",
-                    "Proven leadership managing 1000+ residents",
+                    "Production-ready MERN & PERN stack projects",
+                    "Clean coding practices with efficient debugging",
                     "Real-world industrial internship experience",
+                    "Proven leadership managing 1000+ residents",
                   ].map((point, idx) => (
                     <li
                       key={idx}
@@ -168,7 +175,7 @@ export default function Contact({ isDark }) {
                       }`}
                     >
                       <span className="text-blue-500 mt-1">✓</span>
-                      <span>{point}</span>
+                      <span className="text-sm">{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -176,7 +183,7 @@ export default function Contact({ isDark }) {
             </div>
 
             <div
-              className={`p-8 rounded-2xl shadow-xl ${
+              className={`fade-in-right p-8 rounded-2xl shadow-xl card-shine ${
                 isDark ? "bg-gray-900" : "bg-white"
               }`}
             >

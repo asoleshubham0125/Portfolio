@@ -1,6 +1,9 @@
-import { Code2, Cpu, Trophy, Users } from "lucide-react";
+import { Code2, Cpu, Trophy, Users, GraduationCap, Briefcase } from "lucide-react";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function About({ isDark }) {
+  const sectionRef = useScrollReveal();
+
   const highlights = [
     {
       icon: Code2,
@@ -27,30 +30,53 @@ export default function About({ isDark }) {
   return (
     <section
       id="about"
+      ref={sectionRef}
       className={`py-20 ${
         isDark ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       }`}
     >
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 fade-in-up">
             About{" "}
             <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
               Me
             </span>
           </h2>
 
+          <div className="section-divider mb-4 fade-in-up"></div>
+
           <p
-            className={`text-center text-lg mb-16 ${
+            className={`text-center text-lg mb-16 fade-in-up ${
               isDark ? "text-gray-400" : "text-gray-600"
             }`}
           >
             Versatile engineer bridging software and hardware
           </p>
 
+          {/* Education Badge */}
+          <div className="fade-in-up mb-12 flex justify-center">
+            <div
+              className={`inline-flex items-center gap-3 px-6 py-3 rounded-full ${
+                isDark
+                  ? "bg-gray-800/80 border border-gray-700"
+                  : "bg-gray-50 border border-gray-200"
+              }`}
+            >
+              <GraduationCap className="text-blue-500" size={20} />
+              <div className="text-sm">
+                <span className="font-semibold">BTech in ECE</span>
+                <span className={isDark ? "text-gray-400" : "text-gray-500"}>
+                  {" "}
+                  · IIITDM Kancheepuram · Nov 2022 – May 2026
+                </span>
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div
-              className={`p-8 rounded-2xl ${
+              className={`fade-in-left p-8 rounded-2xl card-shine gradient-border ${
                 isDark
                   ? "bg-gradient-to-br from-blue-900/30 to-cyan-900/30"
                   : "bg-gradient-to-br from-blue-50 to-cyan-50"
@@ -62,15 +88,16 @@ export default function About({ isDark }) {
               </h3>
 
               <p className={isDark ? "text-gray-300" : "text-gray-700"}>
-                Aspiring Software Engineer with strong Java/JavaScript skills,
-                focused on building scalable backend systems and clean,
-                efficient web applications. Experienced in MERN stack, RESTful
-                APIs, and modern frontend frameworks.
+                Aspiring Software Engineer skilled in Java and JavaScript,
+                focused on developing scalable backend services and responsive
+                web applications. Strong foundation in DSA fundamentals, clean
+                coding practices, and modern frameworks like React, Node.js, and
+                Express.js.
               </p>
             </div>
 
             <div
-              className={`p-8 rounded-2xl ${
+              className={`fade-in-right p-8 rounded-2xl card-shine gradient-border ${
                 isDark
                   ? "bg-gradient-to-br from-cyan-900/30 to-teal-900/30"
                   : "bg-gradient-to-br from-cyan-50 to-teal-50"
@@ -90,11 +117,33 @@ export default function About({ isDark }) {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          {/* Experience Badge */}
+          <div className="fade-in-up mb-12 flex justify-center">
+            <div
+              className={`inline-flex items-center gap-3 px-6 py-3 rounded-full ${
+                isDark
+                  ? "bg-gray-800/80 border border-gray-700"
+                  : "bg-gray-50 border border-gray-200"
+              }`}
+            >
+              <Briefcase className="text-cyan-500" size={20} />
+              <div className="text-sm">
+                <span className="font-semibold">
+                  Embedded Systems Intern
+                </span>
+                <span className={isDark ? "text-gray-400" : "text-gray-500"}>
+                  {" "}
+                  · Startrit Infratech Pvt Ltd · May 2025 – July 2025
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6 stagger-children">
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className={`p-6 rounded-xl ${
+                className={`fade-in-up p-6 rounded-xl ${
                   isDark
                     ? "bg-gray-800 hover:bg-gray-700"
                     : "bg-gray-50 hover:bg-gray-100"
