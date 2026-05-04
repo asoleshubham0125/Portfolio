@@ -45,12 +45,10 @@
     <td align="center"><strong>☀️ Light Mode</strong></td>
   </tr>
   <tr>
-    <td><img src="https://via.placeholder.com/500x300/0f172a/3b82f6?text=Dark+Theme" alt="Dark Mode" width="500"/></td>
-    <td><img src="https://via.placeholder.com/500x300/f8fafc/0ea5e9?text=Light+Theme" alt="Light Mode" width="500"/></td>
+    <td><img src="public/utils/DarkMode.png" alt="Dark Mode" width="500"/></td>
+    <td><img src="public/utils/LightMode.png" alt="Light Mode" width="500"/></td>
   </tr>
 </table>
-
-> 💡 **Tip:** Replace the placeholder images above with actual screenshots of your deployed site!
 
 ---
 
